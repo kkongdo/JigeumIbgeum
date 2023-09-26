@@ -1,8 +1,8 @@
 # KB-IT-Final_Project
 
-✏️ **주제** : 디지털 뱅킹 금융 서비스 입문자를 위한 금융 교육 및 연습 웹 서비스<br>
+✏️ **주제** : 디지털 뱅킹 금융 서비스 입문자를 위한 금융 교육 및 연습 웹 서비스(서비스 명 : 지금입금)<br>
 📆 **개발 기간** : 2023/08/22~2023/09/25<br>
-👨‍💻 **개발 인원** : 4명
+👨‍💻 **개발 인원** : 4명 -Team Ditto-
 
 ![슬라이드1](https://github.com/KKongDo/KB-IT-Final_Project/assets/132756641/670f8acf-532d-4714-807d-065ea6547872)
 ![슬라이드2](https://github.com/KKongDo/KB-IT-Final_Project/assets/132756641/738638e3-6e80-4e0b-b211-0c2dbdafb49b)
