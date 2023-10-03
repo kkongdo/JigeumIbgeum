@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <!DOCTYPE html>
 	<html>
 	<head>
@@ -28,119 +30,119 @@
 		
 	</head>
 	<body>
-		<!-- Header -->
-	    <nav class="navbar navbar-expand-lg navbar-light shadow navcolor">
-	        <div class="container d-flex justify-content-between align-items-center">
+    <!-- Header -->
+	<nav class="navbar navbar-expand-lg navbar-light shadow navcolor">
+	    <div class="container d-flex justify-content-between align-items-center">
 	
-	            <a class="navbar-brand text-success logo h1 align-self-center" href="/jgig/">
-	                <img src="/assets/img/KB-logo.png" width="30" height="30" alt="">
-	                <img src="/assets/img/jgig-icon.png"  height="45" alt="">
-	            </a>
+	        <a class="navbar-brand text-success logo h1 align-self-center" href="/jgig/">
+	            <img src="/assets/img/KB-logo.png" width="30" height="30" alt="">
+	            <img src="/assets/img/jgig-icon.png"  height="45" alt="">
+	        </a>
 	
-	            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	                <span class="navbar-toggler-icon"></span>
-	            </button> <!-- 화면 작아질시 토글바 -->
+	        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	            <span class="navbar-toggler-icon"></span>
+	        </button> <!-- 화면 작아질시 토글바 -->
 	
-	            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
-	                <div class="flex-fill">
-	                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-	                      	<li class="nav-item dropdown">
-	                        	<a class="nav-link " href="/jgig/open_account1"   role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                            금융거래연습
-	                        	</a>
-	                        	<ul class="dropdown-menu">
-	                           	 <li><a class="dropdown-item" href="/jgig/open_account1">계좌 개설</a></li>
-	                             <li><a class="dropdown-item" href="/jgig/account_list">계좌 조회 및 이체</a></li>
-	                             <li><a class="dropdown-item" href="/jgig/trans_history">거래 내역 조회</a></li>
-	                             <hr>
-	                             <li><a class="dropdown-item" href="/jgig/card_issuance">카드 발급</a></li>
-	                             <li><a class="dropdown-item" href="/jgig/card_list">카드 조회 및 관리</a></li>
-	                             <hr>
-	                             <li><a class="dropdown-item" href="/jgig/certification">인증서 발급</a></li>
-	                        	</ul>
-	                    	</li>
-	                        <li class="nav-item dropdown">
-	                        	<a class="nav-link " href="/jgig/searchWord"   role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                            금융교육
-	                        	</a>
-	                        	<ul class="dropdown-menu">
-	                           	  <li><a class="dropdown-item" href="/jgig/searchWord">금융 용어 검색</a></li>
-	                             <li><a class="dropdown-item" href="#">금융 상식 퀴즈</a></li>
-	                             <hr>
-	                             <li><a class="dropdown-item" href="#">이용 가이드</a></li>
-	                        	</ul>
-	                    	</li>
-	                    	<li class="nav-item dropdown">
-	                        	<a class="nav-link " href="#공지사항링크"   role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                            커뮤니티
-	                        	</a>
-	                        	<ul class="dropdown-menu">
-	                           	 <li><a class="dropdown-item" href="#">공지사항</a></li>
-	                             <li><a class="dropdown-item" href="/jgig/board_list">게시판</a></li>
-	                             <li><a class="dropdown-item" href="#">내가 쓴 글</a></li>
-	                        	</ul>
-	                    	</li>
-	                    	<li class="nav-item dropdown">
-	                        	<a class="nav-link " href="/jgig/findStore"   role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                            지점찾기
-	                        	</a>
-	                        	<ul class="dropdown-menu">
-	                           	 <li><a class="dropdown-item" href="/jgig/findStore">지점찾기 및 번호표 발행</a></li>
-	                             <li><a class="dropdown-item" href="/jgig/detailWaiting">번호표 조회 및 취소</a></li>
-	                        	</ul>
-	                    	</li>
-	                    	<li class="nav-item dropdown">
-	                        	<a class="nav-link " href="/jgig/point_list"   role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                            마이포인트
-	                        	</a>
-	                        	<ul class="dropdown-menu">
-	                           	 <li><a class="dropdown-item" href="/jgig/point_list">포인트 조회</a></li>
-	                             <li><a class="dropdown-item" href="/jgig/point_conversion">포인트 전환</a></li>
-	                        	</ul>
-	                    	</li>
-	                    </ul>
-	                </div>
-	                <div class="navbar align-self-center d-flex">
-	                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
-	                        <div class="input-group">
-	                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
-	                            <div class="input-group-text">
-	                                <i class="fa fa-fw fa-search"></i>
-	                            </div>
+	        <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+	            <div class="flex-fill">
+	                <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+	                      <li class="nav-item dropdown">
+	                        <a class="nav-link " role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                        금융거래연습
+	                        </a>
+	                        <ul class="dropdown-menu">
+	                            <li><a class="dropdown-item" href="/jgig/open_account1">계좌 개설</a></li>
+	                         <li><a class="dropdown-item" href="/jgig/account_list">계좌 조회 및 이체</a></li>
+	                         <li><a class="dropdown-item" href="/jgig/trans_history">거래 내역 조회</a></li>
+	                         <hr>
+	                         <li><a class="dropdown-item" href="/jgig/card_issuance">카드 발급</a></li>
+	                         <li><a class="dropdown-item" href="/jgig/card_list">카드 조회 및 관리</a></li>
+	                         <hr>
+	                         <li><a class="dropdown-item" href="/jgig/certification">인증서 발급</a></li>
+	                        </ul>
+	                    </li>
+	                    <li class="nav-item dropdown">
+	                        <a class="nav-link " role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                        금융교육
+	                        </a>
+	                        <ul class="dropdown-menu">
+	                             <li><a class="dropdown-item" href="/jgig/searchWord">금융 용어 검색</a></li>
+	                         <li><a class="dropdown-item" href="/jgig/quiz">금융 상식 퀴즈</a></li>
+	                         <hr>
+	                         <li><a class="dropdown-item" href="/jgig/guide">이용 가이드</a></li>
+	                        </ul>
+	                    </li>
+	                    <li class="nav-item dropdown">
+	                        <a class="nav-link " role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                        커뮤니티
+	                        </a>
+	                        <ul class="dropdown-menu">
+	                            <li><a class="dropdown-item" href="/jgig/notice_list">공지사항</a></li>
+	                         <li><a class="dropdown-item" href="/jgig/board_list">게시판</a></li>
+	                         <li><a class="dropdown-item" href="/jgig/board_my_list_action">내가 쓴 글</a></li>
+	                        </ul>
+	                    </li>
+	                    <li class="nav-item dropdown">
+	                        <a class="nav-link " role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                        지점찾기
+	                        </a>
+	                        <ul class="dropdown-menu">
+	                            <li><a class="dropdown-item" href="/jgig/findStore">지점찾기 및 번호표 발행</a></li>
+	                         <li><a class="dropdown-item" href="/jgig/detailWaiting">번호표 조회 및 취소</a></li>
+	                        </ul>
+	                    </li>
+	                    <li class="nav-item dropdown">
+	                        <a class="nav-link " role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                        마이포인트
+	                        </a>
+	                        <ul class="dropdown-menu">
+	                            <li><a class="dropdown-item" href="/jgig/point_list">포인트 조회</a></li>
+	                         <li><a class="dropdown-item" href="/jgig/point_conversion">포인트 전환</a></li>
+	                        </ul>
+	                    </li>
+	                </ul>
+	            </div>
+	            <div class="navbar align-self-center d-flex">
+	                <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+	                    <div class="input-group">
+	                        <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+	                        <div class="input-group-text">
+	                            <i class="fa fa-fw fa-search"></i>
 	                        </div>
 	                    </div>
-						<ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-						
-							<!--로그인 했을 때 -->
-							<c:if test="${not empty sessionScope.mem_id}">
-								<li class="nav-item dropdown">
-									<a class="nav-icon position-relative text-decoration-none nav-link"
-										href="/jgig/member_detail" role="button" data-bs-toggle="dropdown"
-										aria-haspopup="true" aria-expanded="false"> <i
-											class="fa fa-fw fa-user text-dark mr-3"></i>
-										${sessionScope.mem_nm}님 <!--session값으로 받아오기 -->
-									</a>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="/jgig/member_detail">마이페이지</a></li>
-									</ul>
-								</li>
-								<li class="nav-item"><a class="nav-link" href="/jgig/logout">로그아웃</a>
-								</li>
-							</c:if>
-							
-							<!--로그인 안 했을 때 -->
-							<c:if test="${empty sessionScope.mem_id}">
-								<li class="nav-item"><a class="nav-link" href="/jgig/login">로그인</a>
-								</li>
-								<li class="nav-item"><a class="nav-link" href="/jgig/register">회원가입</a>
-								</li>
-							</c:if>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</nav>
-		<!-- Close Header -->
+	                </div>
+	                <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+	                
+	                    <!--로그인 했을 때 -->
+	                    <c:if test="${not empty sessionScope.mem_id}">
+	                        <li class="nav-item dropdown">
+	                            <a class="nav-icon position-relative text-decoration-none nav-link"
+	                                 role="button" data-bs-toggle="dropdown"
+	                                aria-haspopup="true" aria-expanded="false"> <i
+	                                    class="fa fa-fw fa-user text-dark mr-3"></i>
+	                                ${sessionScope.mem_nm}님 <!--session값으로 받아오기 -->
+	                            </a>
+	                            <ul class="dropdown-menu">
+	                                <li><a class="dropdown-item" href="/jgig/member_detail?mem_id=${sessionScope.mem_id}">마이페이지</a></li>
+	                            </ul>
+	                        </li>
+	                        <li class="nav-item"><a class="nav-link" href="/jgig/logout">로그아웃</a>
+	                        </li>
+	                    </c:if>
+	                    
+	                    <!--로그인 안 했을 때 -->
+	                    <c:if test="${empty sessionScope.mem_id}">
+	                        <li class="nav-item"><a class="nav-link" href="/jgig/login">로그인</a>
+	                        </li>
+	                        <li class="nav-item"><a class="nav-link" href="/jgig/register">회원가입</a>
+	                        </li>
+	                    </c:if>
+	                </ul>
+	            </div>
+	        </div>
+	    </div>
+	</nav>
+	<!-- Close Header -->
 	
 		<!-- Modal -->
 		<div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -165,7 +167,7 @@
 	
 				<div class="col-lg-2">
 					<div class="sidemenubox">
-						<h2 class="h3 pt-3 ">금융 거래 연습</h2>
+						<h2 class="h3 pt-3 ">금융거래연습</h2>
 						<hr>
 						<ul class="list-unstyled ">
 							<li><a class="collapsed d-flex justify-content-between text-decoration-none" href="open_account1"> <!--선택된 메뉴는 selectsidemenu 클래스 추가 --> 계좌 개설</a>
@@ -178,24 +180,19 @@
 							</li>
 							<hr>
 							<li >
-								<a class="collapsed d-flex justify-content-between text-decoration-none" href="#">
-									카드 발급
+								<a class="collapsed d-flex justify-content-between text-decoration-none" href="card_issuance">
+									카드발급
 								</a>
 							</li>
 							<li >
-								<a class="collapsed d-flex justify-content-between text-decoration-none" href="#">
-									카드 조회
+								<a class="collapsed d-flex justify-content-between text-decoration-none" href="card_list">
+									카드 조회 및 관리
 								</a>
 							</li>
 							<hr>
 							<li >
-								<a class="collapsed d-flex justify-content-between text-decoration-none" href="#">
-									공인인증서 발급
-								</a>
-							</li>
-							<li >
-								<a class="collapsed d-flex justify-content-between text-decoration-none" href="#">
-									하위메뉴
+								<a class="collapsed d-flex justify-content-between text-decoration-none" href="certification">
+									인증서 발급
 								</a>
 							</li>
 						</ul>
@@ -203,12 +200,12 @@
 				</div>
 	
 				<div class="col-lg-9">
-					<fieldset class = "advice-location">
-								<label for="">음성지원</label>
-								<input type="checkbox" id="">
-								<label for="tooltipCheckbox">도움말</label>
-								<input type="checkbox" id="advice-balloonCheckbox">
-					</fieldset>
+					<div class = "advice-tooltip">
+						<fieldset class = "advice-location">
+							<label for="tooltipCheckbox"><strong class= "advice-tooltip">도움말</strong></label>
+							<input type="checkbox" id="advice-balloonCheckbox">
+						</fieldset>
+					</div>
 					<div class="row">
 						<div class="col-md-6">
 							<ul class="list-inline shop-top-menu  pt-5 pl-3">
@@ -221,124 +218,92 @@
 						<div id="service-content"> 
 							<!-- 여기에 넣으시며 됩니당 -->
 							<fieldset>
-							<form action="trans_history_action" method="post" id = "f1" onsubmit="return validateForm();">
+							<form action="trans_history_action" method="post" id = "form1">
 								<div class = "accountListCss">
+								<strong class="advice-balloon advice-balloon2_trans_his1">1. 계좌를 선택해주세요.</strong>
+								<strong class="advice-balloon advice-balloon3_trans_his1">2-1. 월별조회 버튼을 눌러주세요.</strong>
 									<table>
 										<tr>
-											<th class ="bgc">계좌 선택</th>
-											<strong class="advice-balloon advice-balloon2_trans_his1">1. 계좌를 선택해주세요.</strong>
+											<th class ="bgc" style = "width:24%;">계좌 선택</th>
 											<td>
-												<select name="selectedAccount" id="selectedAccount"
-													onchange="copyAccountNumber()">
-														<option selected>선택</option>
-														<c:forEach items="${list}" var="acclist" varStatus="status">
-															<option value="${acclist.account}">${acclist.account}</option>
-														</c:forEach>
-												</select>
+												<select name="selectedAccount" id="selectedAccount" required>
+													<option value = "" disabled selected>선택</option>
+													<c:forEach items="${accountList}" var="acclist" varStatus="status">
+														<option value="${acclist.account}">${acclist.account}</option>
+													</c:forEach>
+												</select> 
 											</td>
 										</tr>
 										<tr>
-											<th class ="bgc">월별 조회</th>
-											<strong class="advice-balloon advice-balloon3_trans_his1">2-1. 월별조회 버튼을 눌러주세요.</strong>
+											<th class ="bgc" style = "width:24%;">월별 조회</th>
 											<td>
-												<select id="year" name="year" class="form-control"
-													style="display: inline-block; width: auto;">
-														<c:forEach var="i" begin="15" end="25">
-															<option value="${i}">20${i}</option>
+												<select id="year" name="year" class="form-control" style="display: inline-block; width: auto;" required>
+													<c:forEach var="i" begin="15" end="23">
+														<option value="${i}" selected>20${i}</option>
+													</c:forEach>
+												</select> <span>년</span> 
+												<select id="month" name="month" class="form-control" style="display: inline-block; width: auto;" required>
+													<c:forEach var="i" begin="1" end="12">
+														<c:choose>
+															<c:when test="${i lt 10 }">
+																<option value="0${i}">0${i}</option>
+															</c:when>
+															<c:otherwise>
+																<option value="${i}">${i}</option>
+															</c:otherwise>
+														</c:choose>
 														</c:forEach>
-												</select> <span>년</span> <select id="month" name="month"
-													class="form-control"
-													style="display: inline-block; width: auto;">
-														<c:forEach var="i" begin="1" end="12">
-															<c:choose>
-																<c:when test="${i lt 10 }">
-																	<option value="0${i}">0${i}</option>
-																</c:when>
-																<c:otherwise>
-																	<option value="${i}">${i}</option>
-																</c:otherwise>
-															</c:choose>
-														</c:forEach>
-												</select> <span>월</span> <input type="submit"  class="btn btn-warning" value="월별조회">
+												</select> <span>월</span>
+												<Button type="submit"  class="btn button-like-link">월별조회</Button>
 											</td>
 										</tr>
 									</table>
 								</div>
 							  </form>
-							  
-							  <script>
-								function validateForm() {
-								  var selectedAccount = document.getElementById("selectedAccount").value;
-								  if (selectedAccount === "선택") {
-								    alert("계좌를 선택하세요.");
-								    return false; // 폼 제출을 중지합니다.
-								  }
-								  return true; // 폼 제출을 허용합니다.
-								}
-								</script>
-							<form action="trans_history_action2" method="post" onsubmit="return validateForm2();">
+							<form action="trans_history_selected_action2" method="post" id="form2">
 								<input type="hidden" id="accountNumber" name="selectedAccount">
 								<div class ="accountListCss">
-									<table>
+									<table style = "border: none;">
 										<tr>
-											<th class ="bgc" style="width: 246px;">조회 기간</th>
+											<th class ="bgc" style="width: 24%;">조회 기간</th>
 											<td>
-												<input type="text" id="datepicker-start" name="startDate">
+												<input type="text" id="datepicker-start" class = "startDate" name="startDate" required>
 										        <label for="datepicker-end">~</label>
-										        <input type="text" id="datepicker-end" name="endDate">
+										        <input type="text" id="datepicker-end" class = "endDate"name="endDate" required>
 										        <strong class="advice-balloon advice-balloon4_trans_his1">2-2-1. 조회기간을 선택해주세요</strong>
-										        <input type="submit" class="btn btn-warning" value="조회">
+										        <Button type="submit" class="btn button-like-link">조회</Button>
 										        <strong class="advice-balloon advice-balloon5_trans_his1">2-2-2. 조회버튼을 선택해주세요</strong>
 											</td>
 										</tr>
 									</table>
 								</div>
 						    </form>
-						    
-						    <script>
-								function validateForm2() {
-								  var selectedAccount = document.getElementById("accountNumber").value;
-								  if (selectedAccount === "선택" || selectedAccount === "") {
-								    alert("계좌를 선택하세요.");
-								    return false; // 폼 제출을 중지합니다.
-								  }
-								  return true; // 폼 제출을 허용합니다.
-								}
-							</script>
 						</fieldset>
 						<br>
-						<div id="tableDiv" style="display: none;">
-							<h4>계좌번호 ${selectedAccount}</h4>
-							<br>
-							<div class = "accountListCss">
-								<table>
-						        <thead>
-						            <tr>
-						                <th class = "bgc">거래일시</th>
-						                <th class = "bgc">보내는분</th>
-						                <th class = "bgc">받는분</th>
-						                <th class = "bgc">받은금액(원)</th>
-						                <th class = "bgc">보낸금액(원)</th>
-						            </tr>
-						        </thead>
-						        <tbody>
-						            <c:forEach items="${transferList}" var="transferDto">
-						                <tr>
-						                    <td>${transferDto.trans_date}</td>
-						                    <td>${transferDto.send_nm}</td>
-						                    <td>${transferDto.receive_nm}</td>
-						                    <td>${transferDto.withdr_mon}</td>
-						                    <td>${transferDto.depo_mon}</td>
-						                </tr>
-						            </c:forEach>
-						        </tbody>
-						    </table>
-							</div>
-						</div>
+						<div id="transHistoryTable">
+						
+						
 						</div>
 					</div>
+					</div>
+					<div class="modal fade" id="myModal" role="dialog"> 
+					    <div class="modal-dialog">
+					      <!-- Modal content-->
+					      <div class="modal-content">
+					        <div class="modal-header">
+					          <h4 class="modal-title">거래 내역 조회 연습 완료</h4> 
+					        </div>
+					        <div class="modal-body">
+					        	<p>거래 내역 조회 연습을 완료하였습니다.</p>
+					        	<p>포인트는 하루에 한번만 획득 가능합니다.(+5)</p>
+					        </div>
+					        <div class="modal-footer">
+					          <button type="button" class="btn btn-default" data-dismiss="modal" id= "modalClose" >Close</button>
+					        </div>
+					      </div>
+					    </div>
+				  	</div>
 				</div>
-	
 			</div>
 		</div>
 		<!-- End Content -->
@@ -368,24 +333,17 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script>
+			var checkCount = 1
 		    $(function() {
+		    	monthForm()
+		    	calendarForm()
 		    	advice_balloon()
-		        var urlParams = new URLSearchParams(window.location.search)
-		        var showTable = urlParams.get("showTable")
-		
-		        if (showTable === "true") {
-		            $("#tableDiv").show()
-		        } else {
-		            $("#tableDiv").hide()
-		        }
 		        $("#datepicker-start").datepicker()
 	            $("#datepicker-end").datepicker()
+	            $('#modalClose').click(function(){
+		            $('#myModal').modal('hide')
+		        })
 		    })
-		    
-		    function copyAccountNumber() {
-	            var selectedAccount = document.getElementById("selectedAccount").value
-	            document.getElementById("accountNumber").value = selectedAccount
-	        }
 		    function advice_balloon(){
 				$('#advice-balloonCheckbox').change(function() {
 					if (this.checked) {
@@ -402,6 +360,118 @@
 						$('.advice-balloon4_trans_his1').hide()
 						$('.advice-balloon5_trans_his1').hide()
 						console.log('말풍선을 숨깁니다.')
+					}
+				})
+			}
+		    function monthForm(){
+				$("#form1").submit(function(event) {
+					// 기본 폼 제출 동작을 막습니다.
+					event.preventDefault()
+					$("#myModal").modal('show')
+
+					// 선택한 계좌와 월별 조회 정보를 가져옵니다.
+					var selectedAccount = $("#selectedAccount").val()
+					var year = $("#year").val()
+					var month = $("#month").val()
+					var currentPage = '${param.currentPage}'
+					
+					var tdata = {
+							selectedAccount : selectedAccount,
+							year : year,
+							month : month,
+							currentPage:currentPage
+					}
+					$.ajax(
+						{
+						url : "trans_history_action",
+						type : "post",
+						data : tdata,
+						success : function(response) {
+							console.log("Ajax 요청 성공!")
+							$('#transHistoryTable').html(response)
+						},
+						error : function(error) {
+							console.log("Ajax 요청 실패!")
+						}
+					})
+				})
+			}
+			function calendarForm(){
+				$("#form2").submit(function(event) {
+					// 기본 폼 제출 동작을 막습니다.
+					event.preventDefault()
+					$("#myModal").modal('show')
+					
+					// 선택한 계좌와 월별 조회 정보를 가져옵니다.
+					var selectedAccount = $("#selectedAccount").val()
+					var startDate = $(".startDate").val()
+					var endDate = $(".endDate").val()
+					var currentPage = '${param.currentPage}'
+					var tdata = {
+							selectedAccount : selectedAccount,
+							startDate : startDate,
+							endDate : endDate,
+							currentPage:currentPage
+					}
+					$.ajax(
+						{
+						url : "trans_history_action2",
+						type : "post",
+						data : tdata,
+						success : function(response) {
+							console.log("Ajax 요청 성공");
+							console.log(response)
+							$('#transHistoryTable').html(response);
+						},
+						error : function(error) {
+							console.log("Ajax 요청 실패");
+						}
+					})
+				})	
+			}
+			function pagetest(page){
+				var selectedAccount = $("#selectedAccount").val()
+				var year = $("#year").val()
+				var month = $("#month").val()
+				
+				var tdata = {
+					selectedAccount : selectedAccount,
+					year : year,
+					month : month,
+					currentPage : page
+				}
+				$.ajax({
+					type : 'POST',
+					url : 'trans_history_action',
+					data : tdata,
+					success : function(response) {
+						$('#transHistoryTable').html(response)
+					},
+					error : function(error) {
+						console.error('데이터 로드 중 오류 발생:',error)
+					}
+				})
+			}
+			function pagetest2(page){
+				var selectedAccount = $("#selectedAccount").val()
+				var startDate = $(".startDate").val()
+				var endDate = $(".endDate").val()
+				
+				var tdata = {
+					selectedAccount : selectedAccount,
+					startDate : startDate,
+					endDate : endDate,
+					currentPage : page
+				}
+				$.ajax({
+					type : 'POST',
+					url : 'trans_history_action2',
+					data : tdata, 
+					success : function(response) {
+						$('#transHistoryTable').html(response)
+					},
+					error : function(error) {
+						console.error('데이터 로드 중 오류 발생:',error)
 					}
 				})
 			}

@@ -47,126 +47,145 @@
 				}
 			})
 		}
+		function togglePasswordVisibility() {
+		    var passwordInput = document.querySelector("#password1")
+		    var eyeIcon = document.querySelector("#eye-icon")
+
+		    eyeIcon.addEventListener("click", function() {
+		        if (passwordInput.type === "password") {
+		            passwordInput.type = "text"
+		            eyeIcon.classList.remove("fa-eye")
+		            eyeIcon.classList.add("fa-eye-slash")
+		        } else {
+		            passwordInput.type = "password"
+		            eyeIcon.classList.remove("fa-eye-slash")
+		            eyeIcon.classList.add("fa-eye")
+		        }
+		    })
+		    
+		    passwordInput.type = "password"  
+		}
 		
 		$(function () {
 			advice_balloon()
+			togglePasswordVisibility()
 		})
 		</script>
 	</head>
 	<body>
-		<!-- Header -->
-	    <nav class="navbar navbar-expand-lg navbar-light shadow navcolor">
-	        <div class="container d-flex justify-content-between align-items-center">
+    <!-- Header -->
+	<nav class="navbar navbar-expand-lg navbar-light shadow navcolor">
+	    <div class="container d-flex justify-content-between align-items-center">
 	
-	            <a class="navbar-brand text-success logo h1 align-self-center" href="/jgig/">
-	                <img src="/assets/img/KB-logo.png" width="30" height="30" alt="">
-	                <img src="/assets/img/jgig-icon.png"  height="45" alt="">
-	            </a>
+	        <a class="navbar-brand text-success logo h1 align-self-center" href="/jgig/">
+	            <img src="/assets/img/KB-logo.png" width="30" height="30" alt="">
+	            <img src="/assets/img/jgig-icon.png"  height="45" alt="">
+	        </a>
 	
-	            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	                <span class="navbar-toggler-icon"></span>
-	            </button> <!-- 화면 작아질시 토글바 -->
+	        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	            <span class="navbar-toggler-icon"></span>
+	        </button> <!-- 화면 작아질시 토글바 -->
 	
-	            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
-	                <div class="flex-fill">
-	                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-	                      	<li class="nav-item dropdown">
-	                        	<a class="nav-link " href="/jgig/open_account1"   role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                            금융거래연습
-	                        	</a>
-	                        	<ul class="dropdown-menu">
-	                           	 <li><a class="dropdown-item" href="/jgig/open_account1">계좌 개설</a></li>
-	                             <li><a class="dropdown-item" href="/jgig/account_list">계좌 조회 및 이체</a></li>
-	                             <li><a class="dropdown-item" href="/jgig/trans_history">거래 내역 조회</a></li>
-	                             <hr>
-	                             <li><a class="dropdown-item" href="/jgig/card_issuance">카드 발급</a></li>
-	                             <li><a class="dropdown-item" href="/jgig/card_list">카드 조회 및 관리</a></li>
-	                             <hr>
-	                             <li><a class="dropdown-item" href="/jgig/certification">인증서 발급</a></li>
-	                        	</ul>
-	                    	</li>
-	                        <li class="nav-item dropdown">
-	                        	<a class="nav-link " href="/jgig/searchWord"   role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                            금융교육
-	                        	</a>
-	                        	<ul class="dropdown-menu">
-	                           	  <li><a class="dropdown-item" href="/jgig/searchWord">금융 용어 검색</a></li>
-	                             <li><a class="dropdown-item" href="#">금융 상식 퀴즈</a></li>
-	                             <hr>
-	                             <li><a class="dropdown-item" href="#">이용 가이드</a></li>
-	                        	</ul>
-	                    	</li>
-	                    	<li class="nav-item dropdown">
-	                        	<a class="nav-link " href="#공지사항링크"   role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                            커뮤니티
-	                        	</a>
-	                        	<ul class="dropdown-menu">
-	                           	 <li><a class="dropdown-item" href="#">공지사항</a></li>
-	                             <li><a class="dropdown-item" href="/jgig/board_list">게시판</a></li>
-	                             <li><a class="dropdown-item" href="#">내가 쓴 글</a></li>
-	                        	</ul>
-	                    	</li>
-	                    	<li class="nav-item dropdown">
-	                        	<a class="nav-link " href="/jgig/findStore"   role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                            지점찾기
-	                        	</a>
-	                        	<ul class="dropdown-menu">
-	                           	 <li><a class="dropdown-item" href="/jgig/findStore">지점찾기 및 번호표 발행</a></li>
-	                             <li><a class="dropdown-item" href="/jgig/detailWaiting">번호표 조회 및 취소</a></li>
-	                        	</ul>
-	                    	</li>
-	                    	<li class="nav-item dropdown">
-	                        	<a class="nav-link " href="/jgig/point_list"   role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                            마이포인트
-	                        	</a>
-	                        	<ul class="dropdown-menu">
-	                           	 <li><a class="dropdown-item" href="/jgig/point_list">포인트 조회</a></li>
-	                             <li><a class="dropdown-item" href="/jgig/point_conversion">포인트 전환</a></li>
-	                        	</ul>
-	                    	</li>
-	                    </ul>
-	                </div>
-	                <div class="navbar align-self-center d-flex">
-	                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
-	                        <div class="input-group">
-	                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
-	                            <div class="input-group-text">
-	                                <i class="fa fa-fw fa-search"></i>
-	                            </div>
+	        <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+	            <div class="flex-fill">
+	                <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+	                      <li class="nav-item dropdown">
+	                        <a class="nav-link " role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                        금융거래연습
+	                        </a>
+	                        <ul class="dropdown-menu">
+	                            <li><a class="dropdown-item" href="/jgig/open_account1">계좌 개설</a></li>
+	                         <li><a class="dropdown-item" href="/jgig/account_list">계좌 조회 및 이체</a></li>
+	                         <li><a class="dropdown-item" href="/jgig/trans_history">거래 내역 조회</a></li>
+	                         <hr>
+	                         <li><a class="dropdown-item" href="/jgig/card_issuance">카드 발급</a></li>
+	                         <li><a class="dropdown-item" href="/jgig/card_list">카드 조회 및 관리</a></li>
+	                         <hr>
+	                         <li><a class="dropdown-item" href="/jgig/certification">인증서 발급</a></li>
+	                        </ul>
+	                    </li>
+	                    <li class="nav-item dropdown">
+	                        <a class="nav-link " role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                        금융교육
+	                        </a>
+	                        <ul class="dropdown-menu">
+	                             <li><a class="dropdown-item" href="/jgig/searchWord">금융 용어 검색</a></li>
+	                         <li><a class="dropdown-item" href="/jgig/quiz">금융 상식 퀴즈</a></li>
+	                         <hr>
+	                         <li><a class="dropdown-item" href="/jgig/guide">이용 가이드</a></li>
+	                        </ul>
+	                    </li>
+	                    <li class="nav-item dropdown">
+	                        <a class="nav-link " role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                        커뮤니티
+	                        </a>
+	                        <ul class="dropdown-menu">
+	                            <li><a class="dropdown-item" href="/jgig/notice_list">공지사항</a></li>
+	                         <li><a class="dropdown-item" href="/jgig/board_list">게시판</a></li>
+	                         <li><a class="dropdown-item" href="/jgig/board_my_list_action">내가 쓴 글</a></li>
+	                        </ul>
+	                    </li>
+	                    <li class="nav-item dropdown">
+	                        <a class="nav-link " role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                        지점찾기
+	                        </a>
+	                        <ul class="dropdown-menu">
+	                            <li><a class="dropdown-item" href="/jgig/findStore">지점찾기 및 번호표 발행</a></li>
+	                         <li><a class="dropdown-item" href="/jgig/detailWaiting">번호표 조회 및 취소</a></li>
+	                        </ul>
+	                    </li>
+	                    <li class="nav-item dropdown">
+	                        <a class="nav-link " role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                        마이포인트
+	                        </a>
+	                        <ul class="dropdown-menu">
+	                            <li><a class="dropdown-item" href="/jgig/point_list">포인트 조회</a></li>
+	                         <li><a class="dropdown-item" href="/jgig/point_conversion">포인트 전환</a></li>
+	                        </ul>
+	                    </li>
+	                </ul>
+	            </div>
+	            <div class="navbar align-self-center d-flex">
+	                <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+	                    <div class="input-group">
+	                        <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+	                        <div class="input-group-text">
+	                            <i class="fa fa-fw fa-search"></i>
 	                        </div>
 	                    </div>
-						<ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-						
-							<!--로그인 했을 때 -->
-							<c:if test="${not empty sessionScope.mem_id}">
-								<li class="nav-item dropdown">
-									<a class="nav-icon position-relative text-decoration-none nav-link"
-										href="/jgig/member_detail" role="button" data-bs-toggle="dropdown"
-										aria-haspopup="true" aria-expanded="false"> <i
-											class="fa fa-fw fa-user text-dark mr-3"></i>
-										${sessionScope.mem_nm}님 <!--session값으로 받아오기 -->
-									</a>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="/jgig/member_detail">마이페이지</a></li>
-									</ul>
-								</li>
-								<li class="nav-item"><a class="nav-link" href="/jgig/logout">로그아웃</a>
-								</li>
-							</c:if>
-							
-							<!--로그인 안 했을 때 -->
-							<c:if test="${empty sessionScope.mem_id}">
-								<li class="nav-item"><a class="nav-link" href="/jgig/login">로그인</a>
-								</li>
-								<li class="nav-item"><a class="nav-link" href="/jgig/register">회원가입</a>
-								</li>
-							</c:if>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</nav>
-		<!-- Close Header -->
+	                </div>
+	                <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+	                
+	                    <!--로그인 했을 때 -->
+	                    <c:if test="${not empty sessionScope.mem_id}">
+	                        <li class="nav-item dropdown">
+	                            <a class="nav-icon position-relative text-decoration-none nav-link"
+	                                 role="button" data-bs-toggle="dropdown"
+	                                aria-haspopup="true" aria-expanded="false"> <i
+	                                    class="fa fa-fw fa-user text-dark mr-3"></i>
+	                                ${sessionScope.mem_nm}님 <!--session값으로 받아오기 -->
+	                            </a>
+	                            <ul class="dropdown-menu">
+	                                <li><a class="dropdown-item" href="/jgig/member_detail?mem_id=${sessionScope.mem_id}">마이페이지</a></li>
+	                            </ul>
+	                        </li>
+	                        <li class="nav-item"><a class="nav-link" href="/jgig/logout">로그아웃</a>
+	                        </li>
+	                    </c:if>
+	                    
+	                    <!--로그인 안 했을 때 -->
+	                    <c:if test="${empty sessionScope.mem_id}">
+	                        <li class="nav-item"><a class="nav-link" href="/jgig/login">로그인</a>
+	                        </li>
+	                        <li class="nav-item"><a class="nav-link" href="/jgig/register">회원가입</a>
+	                        </li>
+	                    </c:if>
+	                </ul>
+	            </div>
+	        </div>
+	    </div>
+	</nav>
+	<!-- Close Header -->
 	
 		<!-- Modal -->
 		<div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -191,7 +210,7 @@
 	
 				<div class="col-lg-2">
 					<div class="sidemenubox">
-						<h2 class="h3 pt-3 ">금융 거래 연습</h2>
+						<h2 class="h3 pt-3 ">금융거래연습</h2>
 					<hr>
 					<ul class="list-unstyled ">
 						<li>
@@ -211,43 +230,38 @@
 						</li>
 						<hr>
 						<li >
-							<a class="collapsed d-flex justify-content-between text-decoration-none" href="#">
-								카드 발급
-							</a>
-						</li>
-						<li >
-							<a class="collapsed d-flex justify-content-between text-decoration-none" href="#">
-								카드 조회
-							</a>
-						</li>
-						<hr>
-						<li >
-							<a class="collapsed d-flex justify-content-between text-decoration-none" href="#">
-								공인인증서 발급
-							</a>
-						</li>
-						<li >
-							<a class="collapsed d-flex justify-content-between text-decoration-none" href="#">
-								하위메뉴
-							</a>
-						</li>
+								<a class="collapsed d-flex justify-content-between text-decoration-none" href="card_issuance">
+									카드발급
+								</a>
+							</li>
+							<li >
+								<a class="collapsed d-flex justify-content-between text-decoration-none" href="card_list">
+									카드 조회 및 관리
+								</a>
+							</li>
+							<hr>
+							<li >
+								<a class="collapsed d-flex justify-content-between text-decoration-none" href="certification">
+									인증서 발급
+								</a>
+							</li>
 					</ul>
 					</div>
 				</div>
 	
 				<div class="col-lg-9">
-					<fieldset class = "advice-location">
-							<label for="">음성지원</label>
-							<input type="checkbox" id="">
-							<label for="tooltipCheckbox">도움말</label>
+					<div class = "advice-tooltip">
+						<fieldset class = "advice-location">
+							<label for="tooltipCheckbox"><strong class= "advice-tooltip">도움말</strong></label>
 							<input type="checkbox" id="advice-balloonCheckbox">
-					</fieldset>
+						</fieldset>
+					</div>
 					<div class="row">
 						<div class="col-md-6">
 							<ul class="list-inline shop-top-menu  pt-5 pl-3">
 								<h2>계좌 이체</h2>
-								<strong class="advice-balloon advice-balloon1_transferform">계좌 이체를 원하시면 다음 단계를 수행해주세요.</strong>
 							</ul>
+							<strong class="advice-balloon advice-balloon1_transferform">계좌 이체를 원하시면 다음 단계를 수행해주세요.</strong>
 						</div>
 					</div>
 					<div class="row">
@@ -262,42 +276,51 @@
 									<input type = "hidden" name = "mem_id" value = "${dto.mem_id}">
 									<br>
 									<div class = "accountListCss">
+										<strong class="advice-balloon advice-balloon2_transferform">1. 입금은행을 선택해주세요.</strong>
+										<strong class="advice-balloon advice-balloon3_transferform">2. 입급할 분의 이름을 입력해주세요.</strong>
+										<strong class="advice-balloon advice-balloon4_transferform">3. 입급할 계좌번호를 입력해주세요.</strong>
+										<strong class="advice-balloon advice-balloon5_transferform">4. 이체금액을 입력해주세요.</strong>
+										<strong class="advice-balloon advice-balloon6_transferform">5. 계좌비밀번호를 입력해주세요.</strong>
 										<table>
 											<tr>
-												<th class = "bgc">출금계좌번호</th>
+												<th class = "bgc" width = 150px>출금계좌번호</th>
 												<td>${dto.account}</td>
 											</tr>
 											<tr>
 												<th class = "bgc">입금은행</th> 
-												<strong class="advice-balloon advice-balloon2_transferform">1. 입급할 은행을 입력해주세요.</strong>
-												<td><input type = "text" name = "depo_bank" value = "국민" required></td>
+												<td>
+													<select name = "depo_bank" required>
+														<option value ="국민" ${transDto.depo_bank == '국민' ? 'selected' : ''}>국민</option>
+														<option value ="신한" ${transDto.depo_bank == '신한' ? 'selected' : ''}>신한</option>
+														<option value ="우리" ${transDto.depo_bank == '우리' ? 'selected' : ''}>우리</option>
+														<option value ="농협" ${transDto.depo_bank == '농협' ? 'selected' : ''}>농협</option>
+													</select>
+												</td>
 											</tr>
 											<tr>
 												<th class = "bgc">받는분</th>
-												<strong class="advice-balloon advice-balloon3_transferform">2. 입급할 분의 이름을 입력해주세요.</strong>
-												<td><input type = "text" name = "receive_nm" required></td>
+												<td><input type = "text" name = "receive_nm" value = "${transDto.receive_nm}" required></td>
 											</tr>
 											<tr>
 												<th class = "bgc">입금계좌번호</th>
-												<strong class="advice-balloon advice-balloon4_transferform">3. 입급할 계좌번호를 입력해주세요.</strong>
-												<td><input type = "text" name = "depo_num" minlength = "13" maxlength = "13" required></td>
+												<td><input type = "text" name = "depo_num" value = "${transDto.depo_num}" maxlength = "13" required></td>
 											</tr>
 											<tr>
 												<th class = "bgc">이체금액</th>
-												<strong class="advice-balloon advice-balloon5_transferform">4. 이체금액을 입력해주세요.</strong>
-												<td><input type = "text" name = "depo_mon" required>원</td>
+												<td><input type = "text" name = "depo_mon" value = "${transDto.depo_mon}" required>원</td>
 											</tr>
 											<tr>
 												<th class = "bgc">계좌비밀번호</th>
-												<strong class="advice-balloon advice-balloon6_transferform">5. 계좌비밀번호를 입력해주세요.</strong>
-												<td><input type = "text" name = "act_password" minlength = "4" maxlength = "4" required></td>
+												<td><input type = "password" id = "password1" name = "act_password" minlength = 4 maxlength = 4 required>
+												<i id="eye-icon" class="fa fa-eye fa-lg" style="cursor: pointer; margin-left: 1px; font-size: 18px;" onclick="togglePasswordVisibility()"></i>
+												<span id= "error-message">${errorMessage}</span>
+												</td>
 											</tr>
 										</table>
 									</div>
 									<br>
-									<input type = "submit" id = "submitButton" class="btn btn-warning" style="float: right;" value = "확인">
+									<Button type = "submit" id = "submitButton" class="btn button-like-link" style="float: right;">확인</Button>
 									<strong class="advice-balloon advice-balloon7_transferform">6. 확인 버튼을 눌러주세요.</strong>
-									<p>${errorMessage}</p>
 								</form>
 							</fieldset>
 						</div>
