@@ -8,8 +8,11 @@
     * 계좌(생성/해지/조회)
     * 입출금(이체/ 거래 내역 조회부)
 ---
-https://github.com/kkongdo/KB-IT-Final_Project/assets/132756641/bd2a5cbf-8f81-4d38-855a-1ab68979d08d
+## 시연영상
 
+https://github.com/kkongdo/KB-IT-Final_Project/assets/132756641/47429f2c-2f31-42f9-84ce-17fc8ffd2eb0
+
+---
 ![슬라이드1](https://github.com/KKongDo/KB-IT-Final_Project/assets/132756641/670f8acf-532d-4714-807d-065ea6547872)
 ![슬라이드2](https://github.com/KKongDo/KB-IT-Final_Project/assets/132756641/738638e3-6e80-4e0b-b211-0c2dbdafb49b)
 ![슬라이드3](https://github.com/KKongDo/KB-IT-Final_Project/assets/132756641/7f36df04-606c-4fac-9786-8b58c08cafa3)
