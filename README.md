@@ -58,6 +58,9 @@
     </tr>
   </tbody>
 </table>
+
+## 문서
+[Notion](https://www.notion.so/KB-Final-Project-72b4c0259d1e44408974dd7190357d7a)
        
 ---
 ## 시연영상
