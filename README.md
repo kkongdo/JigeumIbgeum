@@ -71,7 +71,7 @@
 ---
 ## 시연영상
 
-[https://github.com/kkongdo/KB-IT-Final_Project/assets/132756641/47429f2c-2f31-42f9-84ce-17fc8ffd2eb0](https://github.com/kkongdo/KB-IT-Final_Project/assets/132756641/47429f2c-2f31-42f9-84ce-17fc8ffd2eb0)
+https://github.com/kkongdo/JigeumIbgeum/assets/132756641/f724e152-091c-4b3e-bf5e-c41cf2162242
 
 ---
 ![슬라이드1](https://github.com/kkongdo/JigeumIbgeum/assets/132756641/cbe16121-82ba-445b-bb69-b1fa8b4b661c)
